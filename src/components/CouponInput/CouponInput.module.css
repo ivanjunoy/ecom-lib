@@ -158,4 +158,12 @@
   .button {
     width: 100%;
   }
+
+  :global(.checkoutCouponInput) .controlGroup {
+    flex-direction: row;
+  }
+
+  :global(.checkoutCouponInput) .button {
+    width: auto;
+  }
 }
