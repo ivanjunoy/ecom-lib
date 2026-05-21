@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { CouponInput } from '../../src';
+import { CouponInput, ProductCard } from '../../src';
 
 type CouponState = 'idle' | 'success' | 'error';
 
@@ -85,68 +85,81 @@ function App() {
 
       <section className="band" id="demo">
         <div className="sectionHeader">
-          <p className="eyebrow">Playground</p>
-          <h2>CouponInput en un flujo real</h2>
-          <p>Probá con el código SAVE15 para simular un cupón válido.</p>
+          <p className="eyebrow">Componentes</p>
+          <h2>Bloques para checkout</h2>
+          <p>
+            Esta sección funciona como vitrina del sistema: cada tarjeta muestra un componente de
+            la librería en un contexto real de e-commerce.
+          </p>
         </div>
 
-        <div className="checkoutDemoShell">
-          <article className="checkoutCard" aria-label="Checkout demo">
-            <h3>Checkout</h3>
-
-            <div className="productRow">
-              <div className="productImage" aria-hidden="true" />
-              <div className="productInfo">
-                <strong>Ralph Lauren Satchel</strong>
-                <span>Free size</span>
-              </div>
-              <strong className="productPrice">${orderTotal.subtotal.toFixed(2)}</strong>
+        <div className="componentShowcaseGrid">
+          <div className="componentDemoSlot">
+            <div className="componentDemoHeader">
+              <h3>ProductCard</h3>
+              <span>Product summary</span>
             </div>
 
-            <CouponInput
-              className="checkoutCouponInput"
-              id="checkout-promo-code"
-              label="Promo code"
-              placeholder="Promo code"
-              applyLabel="Apply"
-              loadingLabel="Applying..."
-              value={coupon}
-              onChange={(value) => {
-                setCoupon(value);
-                setStatus('idle');
-              }}
-              onApply={applyCoupon}
-              loading={isLoading}
-              error={error}
+            <ProductCard
+              name="Nike Running Shoe"
+              description="Crossing hardwood comfort with off-court flair. '80s-inspired construction, bold details and nothin'-but-net style."
+              price="$69.99"
+              tags={['EU38', 'Black/White']}
             />
+          </div>
 
-            {successMessage ? <p className="successMessage">{successMessage}</p> : null}
+          <div className="componentDemoSlot">
+            <div className="componentDemoHeader">
+              <h3>CouponInput</h3>
+              <span>Promo code</span>
+            </div>
 
-            <dl className="checkoutTotals">
-              <div>
-                <dt>Subtotal</dt>
-                <dd>${orderTotal.subtotal.toFixed(2)}</dd>
-              </div>
-              <div>
-                <dt>Delivery & Handling</dt>
-                <dd>${orderTotal.delivery.toFixed(2)}</dd>
-              </div>
-              {orderTotal.discount > 0 ? (
+            <article className="componentDemoCard" aria-label="CouponInput demo">
+              <CouponInput
+                className="checkoutCouponInput"
+                id="checkout-promo-code"
+                label="Promo code"
+                placeholder="Promo code"
+                applyLabel="Apply"
+                loadingLabel="Applying..."
+                value={coupon}
+                onChange={(value) => {
+                  setCoupon(value);
+                  setStatus('idle');
+                }}
+                onApply={applyCoupon}
+                loading={isLoading}
+                error={error}
+              />
+
+              {successMessage ? <p className="successMessage">{successMessage}</p> : null}
+
+              <dl className="checkoutTotals">
                 <div>
-                  <dt>Discount</dt>
-                  <dd>-${orderTotal.discount.toFixed(2)}</dd>
+                  <dt>Subtotal</dt>
+                  <dd>${orderTotal.subtotal.toFixed(2)}</dd>
                 </div>
-              ) : null}
-              <div className="checkoutTotalRow">
-                <dt>Total</dt>
-                <dd>${orderTotal.total.toFixed(2)}</dd>
-              </div>
-            </dl>
+                <div>
+                  <dt>Delivery & Handling</dt>
+                  <dd>${orderTotal.delivery.toFixed(2)}</dd>
+                </div>
+                {orderTotal.discount > 0 ? (
+                  <div>
+                    <dt>Discount</dt>
+                    <dd>-${orderTotal.discount.toFixed(2)}</dd>
+                  </div>
+                ) : null}
+                <div className="checkoutTotalRow">
+                  <dt>Total</dt>
+                  <dd>${orderTotal.total.toFixed(2)}</dd>
+                </div>
+              </dl>
 
-            <button className="placeOrderButton" type="button">
-              Place order
-            </button>
-          </article>
+              <button className="placeOrderButton" type="button">
+                Place order
+              </button>
+            </article>
+          </div>
         </div>
       </section>
 
