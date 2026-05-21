@@ -1,0 +1,371 @@
+:root {
+  color: #172033;
+  background: #f5f7fb;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  min-height: 100vh;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+  gap: 4rem;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem clamp(1.25rem, 4vw, 5rem);
+  background:
+    radial-gradient(circle at top left, rgb(46 125 80 / 0.18), transparent 32rem),
+    linear-gradient(135deg, #f9fafb 0%, #eaf1f8 48%, #f6f1e8 100%);
+}
+
+.heroContent {
+  max-width: 44rem;
+}
+
+.eyebrow {
+  color: #2e7d50;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  color: #101827;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 0.96;
+  margin-bottom: 1.25rem;
+  max-width: 11ch;
+}
+
+h2 {
+  color: #101827;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+  margin-bottom: 0.85rem;
+}
+
+h3 {
+  color: #101827;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  margin-bottom: 0.45rem;
+}
+
+.intro {
+  color: #42526b;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 42rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.actions a {
+  align-items: center;
+  background: #101827;
+  border: 1px solid #101827;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  display: inline-flex;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+}
+
+.actions .secondaryLink {
+  background: transparent;
+  color: #101827;
+}
+
+.checkoutPreview {
+  background: #ffffff;
+  border: 1px solid rgb(23 32 51 / 0.1);
+  border-radius: 0.5rem;
+  box-shadow: 0 1.25rem 4rem rgb(23 32 51 / 0.16);
+  display: grid;
+  gap: 1.25rem;
+  justify-self: stretch;
+  max-width: 28rem;
+  padding: 1.25rem;
+}
+
+.previewHeader,
+.previewTotal {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.previewHeader span,
+.previewTotal span {
+  color: #667085;
+}
+
+.previewRows {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.previewRows span {
+  background: linear-gradient(90deg, #d7dde7, #eef2f7);
+  border-radius: 0.35rem;
+  display: block;
+  height: 2.8rem;
+}
+
+.previewRows span:nth-child(2) {
+  width: 82%;
+}
+
+.previewRows span:nth-child(3) {
+  width: 68%;
+}
+
+.previewTotal {
+  border-top: 1px solid #e4e7ec;
+  padding-top: 1rem;
+}
+
+.band {
+  padding: 4.5rem clamp(1.25rem, 4vw, 5rem);
+}
+
+.band.muted {
+  background: #ffffff;
+}
+
+.sectionHeader {
+  max-width: 44rem;
+  margin-bottom: 2rem;
+}
+
+.sectionHeader p:not(.eyebrow) {
+  color: #526173;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.featureCard {
+  background: #ffffff;
+  border: 1px solid rgb(23 32 51 / 0.1);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.75rem 2rem rgb(23 32 51 / 0.06);
+}
+
+.successMessage {
+  color: #2e7d50;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin: 0.65rem 0 0;
+}
+
+.checkoutDemoShell {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+.checkoutCard {
+  background: #ffffff;
+  border: 1px solid #d9dde6;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2.5rem rgb(23 32 51 / 0.08);
+  display: grid;
+  gap: 1.25rem;
+  max-width: 28rem;
+  padding: 1.75rem;
+  width: min(100%, 28rem);
+}
+
+.checkoutCard h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.productRow {
+  align-items: center;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+}
+
+.productImage {
+  aspect-ratio: 1;
+  background:
+    linear-gradient(135deg, rgb(17 24 39 / 0.12), transparent),
+    linear-gradient(145deg, #84566f 0%, #4b3b52 48%, #2f2736 100%);
+  border: 1px solid #e4e7ec;
+  border-radius: 0.35rem;
+  position: relative;
+}
+
+.productImage::before {
+  background: #3a2f3f;
+  border-radius: 999px 999px 0 0;
+  content: '';
+  height: 1.1rem;
+  left: 50%;
+  position: absolute;
+  top: 0.45rem;
+  transform: translateX(-50%);
+  width: 1.8rem;
+}
+
+.productInfo {
+  display: grid;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.productInfo strong {
+  color: #101827;
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+.productInfo span {
+  color: #8a94a6;
+  font-size: 0.78rem;
+}
+
+.productPrice {
+  color: #101827;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.checkoutTotals {
+  border-top: 1px solid #edf0f4;
+  display: grid;
+  gap: 0.95rem;
+  margin: 0;
+  padding-top: 1rem;
+}
+
+.checkoutTotals div {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkoutTotals dt {
+  color: #7b8496;
+  font-size: 0.82rem;
+}
+
+.checkoutTotals dd {
+  color: #101827;
+  font-size: 0.84rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.checkoutTotals .checkoutTotalRow {
+  border-top: 1px solid #edf0f4;
+  padding-top: 1rem;
+}
+
+.checkoutTotals .checkoutTotalRow dt,
+.checkoutTotals .checkoutTotalRow dd {
+  color: #101827;
+  font-size: 1rem;
+}
+
+.placeOrderButton {
+  background: #4646f5;
+  border: 0;
+  border-radius: 0.35rem;
+  color: #ffffff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 700;
+  min-height: 3.1rem;
+  width: 100%;
+}
+
+.placeOrderButton:hover {
+  background: #3737dc;
+}
+
+.featureGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.featureCard {
+  padding: 1.25rem;
+}
+
+.featureCard p {
+  color: #526173;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+@media (max-width: 860px) {
+  .hero,
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    gap: 2.5rem;
+    min-height: 100vh;
+  }
+
+  .checkoutPreview {
+    max-width: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions a {
+    width: 100%;
+  }
+}
