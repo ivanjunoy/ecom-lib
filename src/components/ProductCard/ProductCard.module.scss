@@ -1,8 +1,10 @@
+@use '../../styles/tokens' as ds;
+
 .root {
-  background: #ffffff;
-  border: 1px solid #d9dde6;
-  border-radius: 1rem;
-  box-shadow: 0 1rem 2.5rem rgb(23 32 51 / 0.08);
+  background: ds.$color-surface;
+  border: 1px solid ds.$color-border;
+  border-radius: ds.$radius-card;
+  box-shadow: ds.$shadow-card;
   display: grid;
   overflow: hidden;
   width: 100%;
@@ -12,7 +14,7 @@
   aspect-ratio: 1.1;
   background:
     radial-gradient(circle at top right, rgb(70 70 245 / 0.22), transparent 11rem),
-    linear-gradient(145deg, #f3f5fb 0%, #e9edf6 100%);
+    linear-gradient(145deg, ds.$color-surface-subtle 0%, #e9edf6 100%);
   min-width: 0;
   overflow: hidden;
   position: relative;
@@ -31,31 +33,31 @@
 
 .imageFallback {
   position: relative;
-}
 
-.imageFallback::before {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 54%, #394152 100%);
-  border-radius: 999px 999px 1.5rem 1.5rem;
-  box-shadow: 2rem 1.4rem 0 -0.6rem #e5e7eb;
-  content: '';
-  height: 4.1rem;
-  left: 49%;
-  position: absolute;
-  top: 42%;
-  transform: translate(-50%, -50%) rotate(-18deg);
-  width: 12rem;
-}
+  &::before {
+    background: linear-gradient(135deg, #1f2937 0%, #111827 54%, #394152 100%);
+    border-radius: 999px 999px 1.5rem 1.5rem;
+    box-shadow: 2rem 1.4rem 0 -0.6rem #e5e7eb;
+    content: '';
+    height: 4.1rem;
+    left: 49%;
+    position: absolute;
+    top: 42%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    width: 12rem;
+  }
 
-.imageFallback::after {
-  background: #ffffff;
-  border-radius: 999px;
-  content: '';
-  height: 0.6rem;
-  left: 45%;
-  position: absolute;
-  top: 42%;
-  transform: translate(-50%, -50%) rotate(-18deg);
-  width: 4rem;
+  &::after {
+    background: ds.$color-surface;
+    border-radius: 999px;
+    content: '';
+    height: 0.6rem;
+    left: 45%;
+    position: absolute;
+    top: 42%;
+    transform: translate(-50%, -50%) rotate(-18deg);
+    width: 4rem;
+  }
 }
 
 .favoriteButton {
@@ -63,7 +65,7 @@
   background: rgb(255 255 255 / 0.18);
   border: 1px solid rgb(255 255 255 / 0.38);
   border-radius: 999px;
-  color: #ffffff;
+  color: ds.$color-surface;
   cursor: pointer;
   display: inline-flex;
   font: inherit;
@@ -75,30 +77,30 @@
   right: 0.8rem;
   top: 0.8rem;
   width: 2.6rem;
-}
 
-.favoriteButton:hover {
-  background: rgb(255 255 255 / 0.28);
+  &:hover {
+    background: rgb(255 255 255 / 0.28);
+  }
 }
 
 .content {
   display: grid;
   gap: 0.85rem;
   padding: 1rem;
-}
 
-.content h3 {
-  color: #101827;
-  font-size: 1.25rem;
-  line-height: 1.2;
-  margin: 0;
-}
+  h3 {
+    color: ds.$color-text;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin: 0;
+  }
 
-.content p {
-  color: #526173;
-  font-size: 0.95rem;
-  line-height: 1.45;
-  margin: 0;
+  p {
+    color: ds.$color-text-muted;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin: 0;
+  }
 }
 
 .tags {
@@ -112,9 +114,9 @@
 
 .tags li,
 .badge {
-  border: 1px solid #d9dde6;
-  border-radius: 0.25rem;
-  color: #526173;
+  border: 1px solid ds.$color-border;
+  border-radius: ds.$radius-sm;
+  color: ds.$color-text-muted;
   display: inline-flex;
   font-size: 0.72rem;
   font-weight: 700;
@@ -140,27 +142,27 @@
 .priceGroup {
   display: grid;
   gap: 0.1rem;
-}
 
-.priceGroup span {
-  color: #101827;
-  font-size: 0.72rem;
-  font-weight: 800;
-  line-height: 1;
-  text-transform: uppercase;
-}
+  span {
+    color: ds.$color-text;
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+  }
 
-.priceGroup strong {
-  color: #101827;
-  font-size: 1.35rem;
-  line-height: 1;
+  strong {
+    color: ds.$color-text;
+    font-size: 1.35rem;
+    line-height: 1;
+  }
 }
 
 .actionButton {
-  background: #5f5593;
+  background: ds.$color-secondary;
   border: 0;
-  border-radius: 0.45rem;
-  color: #ffffff;
+  border-radius: ds.$radius-control;
+  color: ds.$color-surface;
   cursor: pointer;
   font: inherit;
   font-size: 0.86rem;
@@ -168,10 +170,10 @@
   min-height: 3rem;
   padding: 0.75rem 1rem;
   width: 100%;
-}
 
-.actionButton:hover {
-  background: #514884;
+  &:hover {
+    background: ds.$color-secondary-hover;
+  }
 }
 
 @media (max-width: 420px) {

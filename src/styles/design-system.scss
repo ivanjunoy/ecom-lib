@@ -1,0 +1,33 @@
+@forward 'tokens';
+
+:root {
+  --lij-color-primary: #4646f5;
+  --lij-color-primary-hover: #3737dc;
+  --lij-color-primary-muted: #f4f5ff;
+  --lij-color-secondary: #5f5593;
+  --lij-color-secondary-hover: #514884;
+  --lij-color-surface: #ffffff;
+  --lij-color-surface-muted: #f5f7fb;
+  --lij-color-surface-subtle: #f3f5fb;
+  --lij-color-text: #101827;
+  --lij-color-text-muted: #526173;
+  --lij-color-text-soft: #7b8496;
+  --lij-color-text-hover: #374151;
+  --lij-color-placeholder: #a2aabd;
+  --lij-color-border: #d9dde6;
+  --lij-color-border-strong: #9ca3af;
+  --lij-color-border-subtle: #e3e7ee;
+  --lij-color-focus: #2563eb;
+  --lij-color-success: #2e7d50;
+  --lij-color-danger: #b91c1c;
+  --lij-color-danger-border: #dc2626;
+  --lij-color-disabled-bg: #d1d5db;
+  --lij-color-disabled-text: #6b7280;
+  --lij-shadow-card: 0 1rem 2.5rem rgb(23 32 51 / 0.08);
+  --lij-shadow-control: 0 0.35rem 1.1rem rgb(23 32 51 / 0.04);
+  --lij-radius-card: 1rem;
+  --lij-radius-control: 0.45rem;
+  --lij-radius-sm: 0.25rem;
+  --lij-font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}

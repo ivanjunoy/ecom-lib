@@ -1,4 +1,4 @@
-import styles from './ProductCard.module.css';
+import styles from './ProductCard.module.scss';
 
 export type ProductCardProps = {
   name: string;

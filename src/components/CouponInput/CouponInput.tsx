@@ -1,6 +1,6 @@
 import { useId } from 'react';
 
-import styles from './CouponInput.module.css';
+import styles from './CouponInput.module.scss';
 
 export type CouponInputProps = {
   value: string;
