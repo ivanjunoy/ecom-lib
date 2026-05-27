@@ -1,0 +1,190 @@
+@use '../../styles/tokens' as ds;
+
+.root {
+  background: ds.$color-surface;
+  border: 1px solid ds.$color-border;
+  border-radius: ds.$radius-card;
+  box-shadow: ds.$shadow-card;
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.header {
+  display: grid;
+  gap: 0.45rem;
+
+  h3,
+  p {
+    margin: 0;
+  }
+
+  h3 {
+    color: ds.$color-text;
+    font-size: 1.35rem;
+    line-height: 1.15;
+  }
+
+  p:not(.kicker) {
+    color: ds.$color-text-muted;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+}
+
+.kicker {
+  color: ds.$color-success;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gatewayActions,
+.form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.socialGrid {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.socialButton,
+.primaryButton,
+.secondaryButton,
+.linkButton {
+  cursor: pointer;
+  font: inherit;
+}
+
+.socialButton,
+.primaryButton,
+.secondaryButton {
+  align-items: center;
+  border-radius: ds.$radius-control;
+  display: inline-flex;
+  font-size: 0.88rem;
+  font-weight: 700;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1rem;
+}
+
+.socialButton {
+  background: ds.$color-surface;
+  border: 1px solid ds.$color-border-subtle;
+  color: ds.$color-text;
+  gap: 0.5rem;
+
+  &:hover {
+    border-color: ds.$color-border-strong;
+  }
+
+  span {
+    align-items: center;
+    background: ds.$color-surface-muted;
+    border-radius: 999px;
+    display: inline-flex;
+    font-size: 0.78rem;
+    height: 1.4rem;
+    justify-content: center;
+    line-height: 1;
+    width: 1.4rem;
+  }
+}
+
+.divider {
+  align-items: center;
+  color: ds.$color-text-soft;
+  display: grid;
+  font-size: 0.74rem;
+  font-weight: 700;
+  gap: 0.75rem;
+  grid-template-columns: 1fr auto 1fr;
+  text-transform: uppercase;
+
+  &::before,
+  &::after {
+    background: ds.$color-border-subtle;
+    content: '';
+    height: 1px;
+  }
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+
+  span {
+    color: ds.$color-text;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  input {
+    border: 1px solid ds.$color-border-subtle;
+    border-radius: ds.$radius-control;
+    box-shadow: ds.$shadow-control;
+    color: ds.$color-text;
+    font: inherit;
+    font-size: 0.88rem;
+    min-height: 3rem;
+    padding: 0.75rem 0.9rem;
+    width: 100%;
+
+    &::placeholder {
+      color: ds.$color-placeholder;
+    }
+
+    &:focus {
+      border-color: ds.$color-focus;
+      box-shadow: 0 0 0 3px rgb(37 99 235 / 0.16);
+      outline: none;
+    }
+  }
+}
+
+.primaryButton {
+  background: ds.$color-primary;
+  border: 0;
+  color: ds.$color-surface;
+
+  &:hover {
+    background: ds.$color-primary-hover;
+  }
+}
+
+.secondaryButton {
+  background: ds.$color-surface;
+  border: 1px solid ds.$color-text;
+  color: ds.$color-text;
+
+  &:hover {
+    color: ds.$color-text-hover;
+  }
+}
+
+.linkButton {
+  background: transparent;
+  border: 0;
+  color: ds.$color-primary;
+  font-size: 0.82rem;
+  font-weight: 700;
+  justify-self: start;
+  padding: 0;
+  text-decoration: underline;
+
+  &:hover {
+    color: ds.$color-primary-hover;
+  }
+}
+
+@media (max-width: 420px) {
+  .socialGrid {
+    grid-template-columns: 1fr;
+  }
+}

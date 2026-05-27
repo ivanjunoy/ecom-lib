@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 
-import { CouponInput, ProductCard } from '../../../src';
+import { AuthPanel, CouponInput, ProductCard } from '../../../src';
 
 type CouponState = 'idle' | 'success' | 'error';
 
@@ -111,6 +111,33 @@ export function ComponentShowcase() {
               Place order
             </button>
           </article>
+        </div>
+
+        <div className="componentDemoSlot">
+          <div className="componentDemoHeader">
+            <h3>AuthPanel</h3>
+            <span>Entry actions</span>
+          </div>
+
+          <AuthPanel variant="gateway" />
+        </div>
+
+        <div className="componentDemoSlot">
+          <div className="componentDemoHeader">
+            <h3>AuthPanel</h3>
+            <span>Login view</span>
+          </div>
+
+          <AuthPanel variant="login" />
+        </div>
+
+        <div className="componentDemoSlot">
+          <div className="componentDemoHeader">
+            <h3>AuthPanel</h3>
+            <span>Register view</span>
+          </div>
+
+          <AuthPanel variant="register" />
         </div>
       </div>
     </section>

@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import { CouponInput, ProductCard } from '../../../src';
+import { AuthPanel, CouponInput, ProductCard } from '../../../src';
 import './CheckoutPreview.css';
 
 type PreviewSlide = {
-  key: 'product-card' | 'coupon-input' | 'order-review';
+  key:
+    | 'product-card'
+    | 'coupon-input'
+    | 'order-review'
+    | 'auth-gateway'
+    | 'auth-login'
+    | 'auth-register';
   title: string;
   eyebrow: string;
 };
@@ -24,6 +30,21 @@ const previewSlides: PreviewSlide[] = [
     key: 'order-review',
     title: 'Checkout review',
     eyebrow: 'Order totals',
+  },
+  {
+    key: 'auth-gateway',
+    title: 'AuthPanel',
+    eyebrow: 'Entry actions',
+  },
+  {
+    key: 'auth-login',
+    title: 'Login view',
+    eyebrow: 'Account access',
+  },
+  {
+    key: 'auth-register',
+    title: 'Register view',
+    eyebrow: 'New account',
   },
 ];
 
@@ -59,6 +80,18 @@ function renderPreviewSlide(slide: PreviewSlide) {
         <p className="successMessage">Cupón listo para aplicar.</p>
       </article>
     );
+  }
+
+  if (slide.key === 'auth-gateway') {
+    return <AuthPanel className="previewAuthPanel" variant="gateway" />;
+  }
+
+  if (slide.key === 'auth-login') {
+    return <AuthPanel className="previewAuthPanel" variant="login" />;
+  }
+
+  if (slide.key === 'auth-register') {
+    return <AuthPanel className="previewAuthPanel" variant="register" />;
   }
 
   return (

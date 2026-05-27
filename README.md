@@ -20,7 +20,41 @@ npm run storybook
 - Storybook
 - Vitest + React Testing Library
 - ESLint + Prettier
-- `CouponInput` component exported from `src/index.ts`
+- Components exported from `src/index.ts`
+
+## Components
+
+### `CouponInput`
+
+Controlled coupon code input for checkout flows. It includes a label, text input,
+apply button, loading state, disabled state, Enter key submission, and accessible
+error messaging.
+
+Main props:
+
+- `value`: current coupon code.
+- `onChange`: receives the next input value.
+- `onApply`: runs when the user applies the coupon.
+- `loading`, `error`, `disabled`: optional UI states.
+- `label`, `placeholder`, `applyLabel`, `loadingLabel`: optional text overrides.
+- `id`, `className`: optional DOM customization.
+
+### `ProductCard`
+
+Product summary card for catalog or checkout-adjacent views. It supports product
+imagery, fallback image state, tags, badge, price, primary action, and wishlist
+action.
+
+Main props:
+
+- `name`: product name.
+- `price`: display price.
+- `description`: optional product description.
+- `imageUrl`, `imageAlt`: optional product image.
+- `badge`, `tags`: optional product metadata.
+- `actionLabel`, `onAction`: optional primary action.
+- `favoriteLabel`, `onFavorite`: optional wishlist action.
+- `className`: optional DOM customization.
 
 ## Development surfaces
 

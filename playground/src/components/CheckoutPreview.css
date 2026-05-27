@@ -27,7 +27,8 @@
 
 .previewProductCard,
 .previewCouponCard,
-.previewOrderCard {
+.previewOrderCard,
+.previewAuthPanel {
   align-self: center;
   justify-self: stretch;
   width: 100%;
