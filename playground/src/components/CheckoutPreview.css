@@ -1,0 +1,95 @@
+.checkoutPreview {
+  display: grid;
+  gap: 1rem;
+  justify-self: stretch;
+  max-width: 28rem;
+  min-height: 34rem;
+  overflow: hidden;
+}
+
+.previewHeader {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 0.25rem;
+}
+
+.previewHeader span {
+  color: #667085;
+}
+
+.previewStage {
+  align-items: stretch;
+  animation: previewFadeZoom 3.2s ease-in-out both;
+  display: grid;
+  min-height: 25rem;
+}
+
+.previewProductCard,
+.previewCouponCard,
+.previewOrderCard {
+  align-self: center;
+  justify-self: stretch;
+  width: 100%;
+}
+
+.previewCouponCard,
+.previewOrderCard {
+  background: #ffffff;
+  border: 1px solid #d9dde6;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2.5rem rgb(23 32 51 / 0.08);
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.previewOrderCard {
+  align-content: center;
+}
+
+.previewDots {
+  display: flex;
+  gap: 0.45rem;
+  justify-content: center;
+}
+
+.previewDots span {
+  background: #d0d5dd;
+  border-radius: 999px;
+  display: block;
+  height: 0.45rem;
+  transition:
+    background 180ms ease,
+    width 180ms ease;
+  width: 0.45rem;
+}
+
+.previewDots .isActive {
+  background: #2e7d50;
+  width: 1.45rem;
+}
+
+@keyframes previewFadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  14%,
+  82% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+}
+
+@media (max-width: 860px) {
+  .checkoutPreview {
+    max-width: none;
+  }
+}
